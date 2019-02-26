@@ -4,11 +4,12 @@ APPLICATION_ID: spring-boot
 service_description:
   name: spring-boot-simple
   version: 0.0.1
+  environment: development
 
 servicecomb:
   service:
     registry:
-      address: http://10.0.1.253:30100
+      address: http://192.168.0.28:30100
 
   rest:
     #address: 0.0.0.0:9093
