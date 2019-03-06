@@ -1,0 +1,14 @@
+cse-config-order: 100
+
+APPLICATION_ID: spring-boot
+service_description:
+  name: edc-demo
+  version: 0.0.1
+
+servicecomb:
+  service:
+    registry:
+      address: http://192.168.0.28:30100
+
+  rest:
+    address: 0.0.0.0:9093
