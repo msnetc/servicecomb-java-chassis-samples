@@ -3,23 +3,35 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.5.RELEASE</version>
-    </parent>
+
 
     <groupId>org.apache.servicecomb.sample</groupId>
     <artifactId>spring-boot-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <springboot.version>1.5.12.RELEASE</springboot.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <springboot.version>1.5.12.RELEASE</springboot.version>
+        <java-chassis.version>1.1.0</java-chassis.version>
+        <mybatis-plus-boot-starter.version>2.1.9</mybatis-plus-boot-starter.version>
+        <mybatisplus.version>2.1.8</mybatisplus.version>
+        <fastjson.version>1.2.39</fastjson.version>
+        <mysql.version>6.0.6</mysql.version>
+        <swagger-annotations.version>1.5.12</swagger-annotations.version>
+        <druid.version>1.0.18</druid.version>
+        <maven-archetype-packaging-version>2.3</maven-archetype-packaging-version>
+    </properties>
     <dependencyManagement>
         <dependencies>
 	      <dependency>
 	        <groupId>org.apache.servicecomb</groupId>
 	        <artifactId>java-chassis-dependencies</artifactId>
-	        <version>1.0.0-m1</version>
+	        <version>1.1.0</version>
 	        <type>pom</type>
 	        <scope>import</scope>
 	      </dependency>
@@ -31,6 +43,8 @@
             <groupId>org.apache.servicecomb</groupId>
             <artifactId>spring-boot-starter-provider</artifactId>
         </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter</artifactId>
@@ -42,20 +56,45 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>${maven-archetype-packaging-version}</version>
+            </extension>
+        </extensions>
 
+        <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
+        <resources>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/mapper/xml/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>config/*.xml</include>
+                    <include>*.yaml</include>
+                    <include>*.xml</include>
+                    <include>*.properties</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>
