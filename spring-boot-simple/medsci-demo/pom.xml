@@ -88,5 +88,24 @@
 				<version>${springboot.version}</version>
 			</plugin>
 		</plugins>
+
+		<resources>
+
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/mapper/xml/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>config/*.xml</include>
+					<include>*.yaml</include>
+					<include>*.xml</include>
+					<include>*.properties</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 </project>
