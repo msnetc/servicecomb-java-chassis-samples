@@ -3,8 +3,10 @@ package cn.medsci.paas.config;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.reflection.MetaObject;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,9 +22,12 @@ import com.baomidou.mybatisplus.toolkit.PluginUtils;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 
+import javax.sql.DataSource;
+
 @Configuration
 @MapperScan("cn.medsci.paas.demo.mapper*")
 public class MybatisPlusConfig {
+
 
     /**
      * mybatis-plus SQL执行效率插件【生产环境可以关闭】

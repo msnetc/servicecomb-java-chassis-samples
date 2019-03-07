@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 /**
@@ -16,6 +19,8 @@ import java.io.Serializable;
  * @since 2019-03-07
  */
 @TableName("t_order_item")
+@Getter
+@Setter
 public class TOrderItem extends Model<TOrderItem> {
 
     private static final long serialVersionUID = 1L;
@@ -29,37 +34,7 @@ public class TOrderItem extends Model<TOrderItem> {
     private String status;
 
 
-    public Long getOrderItemId() {
-        return orderItemId;
-    }
 
-    public void setOrderItemId(Long orderItemId) {
-        this.orderItemId = orderItemId;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     @Override
     protected Serializable pkVal() {
