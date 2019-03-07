@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>edc-demo</module>
-        <module>pv-privilege-auth</module>
+        <module>medsci-demo</module>
     </modules>
     <properties>
+        <java-chassis.version>1.1.0</java-chassis.version>
         <springboot.version>1.5.12.RELEASE</springboot.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

@@ -1,4 +1,4 @@
-package cn.medsci.pass;
+package cn.medsci.paas;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
@@ -20,7 +20,7 @@ public class MpGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("E:\\dev\\src\\medsci-himalaya\\himalaya-auth\\mbgoutput");
+        gc.setOutputDir("E:\\dev\\src\\github.com\\msnetc\\servicecomb-java-chassis-samples\\spring-boot-simple\\medsci-demo\\mbgout");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);
         gc.setEnableCache(false);// XML 二级缓存
@@ -50,9 +50,9 @@ public class MpGenerator {
             }
         });
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUrl("jdbc:mysql://10.0.1.40:3306/pv3.0?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai");
-        dsc.setUsername("zhouwen");
-        dsc.setPassword("ZhowWen-160111");
+        dsc.setUrl("jdbc:mysql://116.62.208.147:3366/demo_ds_1");
+        dsc.setUsername("root");
+        dsc.setPassword("sh@.20190103");
         mpg.setDataSource(dsc);
 
         // 策略配置
@@ -85,7 +85,7 @@ public class MpGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("cn.medsci.pass");
+        pc.setParent("cn.medsci.paas.demo");
         /* pc.setModuleName("freemarker");*/
         mpg.setPackageInfo(pc);
 
