@@ -1,0 +1,17 @@
+APPLICATION_ID: medsci-pass
+service_description:
+  name: pv-privilege-auth
+  version: 4.0.4
+  #environment: development
+  environment: testing
+  #environment: production
+servicecomb:
+  handler:
+    chain:
+      Provider: {}
+  rest:
+    address: 192.168.6.228:9480
+    #address: 10.0.1.146:9480
+  service:
+    registry:
+      address: http://10.0.1.253:30100

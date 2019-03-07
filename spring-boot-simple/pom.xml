@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>edc-demo</module>
+        <module>pv-privilege-auth</module>
     </modules>
     <properties>
         <springboot.version>1.5.12.RELEASE</springboot.version>
@@ -26,5 +27,19 @@
         <druid.version>1.0.18</druid.version>
         <maven-archetype-packaging-version>2.3</maven-archetype-packaging-version>
     </properties>
+
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Releases</name>
+            <url>http://10.0.1.253:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshot</name>
+            <url>http://10.0.1.253:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
